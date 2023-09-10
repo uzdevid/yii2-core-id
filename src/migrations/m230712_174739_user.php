@@ -13,9 +13,11 @@ class m230712_174739_user extends Migration {
      */
     public function safeUp(): void {
         $this->createTable(self::$tableName, [
-            'id' => $this->primaryKey(),
+            'id' => $this->getDb()->getSchema()->createColumnSchemaBuilder('uuid')->unique()->notNull(),
             'create_time' => $this->bigInteger()->notNull()
         ]);
+
+        $this->addPrimaryKey('pk_user', self::$tableName, 'id');
     }
 
     /**
