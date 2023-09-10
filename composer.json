@@ -22,7 +22,7 @@
   },
   "autoload": {
     "psr-4": {
-      "uzdevid\\CoreID\\": ""
+      "uzdevid\\CoreID\\": "src"
     }
   }
 }
